@@ -1055,3 +1055,18 @@ code,.steps code{background:transparent!important;font-weight:600}
  #booklet .bk-gl{columns:2;column-gap:7mm}#booklet .bk-gl p{break-inside:avoid;margin:0 0 2mm;font-size:9.5pt}#booklet .bk-gl span{color:#555}
 }
 figure.cph.org-art svg{width:100%;height:100%;display:block}
+/* v7: menu toggle (desktop + mobile) */
+.side-tg{display:none;position:fixed;top:12px;left:270px;z-index:95;width:42px;height:42px;border-radius:10px;border:1px solid var(--line);background:var(--surf);color:var(--txt);cursor:pointer;align-items:center;justify-content:center;box-shadow:var(--sh1);transition:left .3s}
+.side-tg:hover{border-color:var(--pri);color:var(--pri)}
+@media(min-width:1100px){.side-tg{display:flex}
+ body.side-hide{padding-left:0!important}
+ body.side-hide #side{transform:translateX(-105%)!important}
+ body.side-hide .side-tg{left:12px}
+ body{transition:padding-left .3s}}
+/* mobile top bar: keep the menu button fully visible */
+#nav .mtop{display:flex;align-items:center;gap:8px;padding:10px 12px;min-width:0}
+#nav .burger{flex:0 0 42px;width:42px!important;height:42px;display:flex;align-items:center;justify-content:center;padding:0;color:var(--txt)}
+#nav .logo{min-width:0;flex:1 1 auto;overflow:hidden;white-space:nowrap}
+#nav .mtop>*:not(.burger):not(.logo){flex-shrink:0}
+@media(max-width:430px){#nav .langbtn{font-size:0!important;padding:0 10px!important;min-width:42px;height:42px}#nav .langbtn .gi{font-size:18px}#nav .logo span{font-size:1rem}}
+@media(max-width:1099px){body.side-open .side-tg{display:flex;left:268px;top:10px}}
